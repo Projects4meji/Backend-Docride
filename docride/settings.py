@@ -7,7 +7,7 @@ SECRET_KEY = os.environ.get("SECRET_KEY", "insecure-dev-key")
 
 DEBUG = os.environ.get("DEBUG", "False") == "True"
 
-ALLOWED_HOSTS = ['backend-docride.onrender.com', 'localhost']
+ALLOWED_HOSTS = ['your-service-name.onrender.com', 'localhost']
 
 INSTALLED_APPS = [
     'django.contrib.admin',

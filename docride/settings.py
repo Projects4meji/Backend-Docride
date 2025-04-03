@@ -7,7 +7,11 @@ SECRET_KEY = os.environ.get("SECRET_KEY", "insecure-dev-key")
 
 DEBUG = os.environ.get("DEBUG", "False") == "True"
 
-ALLOWED_HOSTS = ['your-service-name.onrender.com', 'localhost']
+ALLOWED_HOSTS = [
+    'your-service-name.onrender.com',
+    'localhost',
+    '127.0.0.1',
+]
 
 INSTALLED_APPS = [
     'django.contrib.admin',
@@ -33,8 +37,8 @@ MIDDLEWARE = [
 ]
 
 CORS_ALLOWED_ORIGINS = [
-    'http://localhost:5173',               # (keep for local development)
-    'https://docride.vercel.app',         # (your production frontend)
+    'http://localhost:5173',               # Local frontend
+    'https://docride.vercel.app',         # Production frontend
 ]
 
 
@@ -88,13 +92,14 @@ USE_I18N = True
 
 USE_TZ = True
 
-STATIC_URL = 'static/'
-
+STATIC_URL = '/static/'
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
+
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
-SITE_URL = 'https://docride.vercel.app'
+# Let SITE_URL be based on environment (for Stripe return URL)
+SITE_URL = os.environ.get("SITE_URL", "http://localhost:5173")
 
 STRIPE_SECRET_KEY = 'sk_test_51R3Q1PEYQxHtXYU4rAo2IAxXrezUQ8Cmwk7hsH5A2qOlekKC2NM26b82pnyjeSMRWcIeFd5PBLcLgsAs7upo9Ysr00MNYn2ID0'
 

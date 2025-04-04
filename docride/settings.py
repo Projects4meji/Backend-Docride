@@ -37,8 +37,8 @@ MIDDLEWARE = [
 ]
 
 CORS_ALLOWED_ORIGINS = [
-    'http://localhost:5173',               # Local frontend
-    'https://docride.vercel.app',         # Production frontend
+    'https://docride.vercel.app',          # Production frontend
+    'http://localhost:5173',               # Local frontend          
 ]
 
 

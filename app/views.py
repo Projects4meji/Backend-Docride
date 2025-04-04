@@ -1,5 +1,6 @@
 import stripe
 from django.conf import settings
+from django.http import HttpResponse
 from rest_framework.views import APIView
 from rest_framework.response import Response
 from rest_framework import status
@@ -48,3 +49,7 @@ class StripeCheckoutView(APIView):
         except Exception as e:
             print("Stripe Error:", e)  # Add this line
             return Response({'error': str(e)}, status=status.HTTP_500_INTERNAL_SERVER_ERROR)
+
+
+def home(request):
+    return HttpResponse("Welcome to the homepage!")

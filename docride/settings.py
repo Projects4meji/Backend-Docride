@@ -36,11 +36,19 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
 
-CORS_ALLOWED_ORIGINS = [
-    'https://docride.vercel.app',          # Production frontend
-    'http://localhost:5173',               # Local frontend          
-]
+CORS_ALLOW_ALL_ORIGINS = True
 
+CORS_ALLOW_HEADERS = [
+    'accept',
+    'accept-encoding',
+    'authorization',
+    'content-type',
+    'dnt',
+    'origin',
+    'user-agent',
+    'x-csrftoken',
+    'x-requested-with',
+]
 
 ROOT_URLCONF = 'docride.urls'
 
